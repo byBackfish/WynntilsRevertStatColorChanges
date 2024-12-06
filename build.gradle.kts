@@ -6,8 +6,6 @@ plugins {
 val version: String by project
 val minecraft_version: String by project
 val loader_version: String by project
-val fabric_kotlin_version: String by project
-val kotlin_version: String by project
 val fabric_version: String by project
 val yarn_mappings: String by project
 val devauth_version: String by project
@@ -23,8 +21,6 @@ dependencies {
     mappings("net.fabricmc:yarn:${yarn_mappings}:v2")
     modImplementation("net.fabricmc:fabric-loader:${loader_version}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_version}")
-
-    modImplementation("net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}")
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauth_version}")
 
@@ -63,7 +59,6 @@ tasks {
                     "version" to version,
                     "minecraft_version" to minecraft_version,
                     "loader_version" to loader_version,
-                    "language_support_version" to "$fabric_kotlin_version+kotlin.$kotlin_version"
                 )
             )
         }
